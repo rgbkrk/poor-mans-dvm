@@ -9,8 +9,15 @@ dvm() {
       DOCKER_VERSION=${DOCKER_VERSION:-${2:-$DOCKER_DEFAULT_VERSION}}
       return 0
     ;;
+    "install")
+      echo "Do it yourself, stick them in ${DVM_DIR}"
+      return 1
+    ;;
     * )
-      echo "eh"
+      echo "The only command is: "
+      echo "  dvm use 1.8.2"
+      echo ""
+      echo "You can also be lazy and just set \$DOCKER_VERSION"
       return 1
     ;;
   esac
